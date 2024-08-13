@@ -1,37 +1,17 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import React from "react";
+import { router, Stack } from "expo-router";
+import { Button } from "react-native";
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
-        }}
-      />
-    </Tabs>
-  );
+function TabsLayout() {
+    return (
+      <Stack>
+        <Stack.Screen name="home" options={{
+          headerLeft: () => <Button title="<--" onPress={() => router.dismiss(1)}/>,
+          headerRight: () => <Button title='About' onPress={() => router.push('/about')}/>
+        }}/>
+        <Stack.Screen name="about" options={{headerLeft: () => <Button title="Home" onPress={() => router.dismiss(1)}/>}}/>
+      </Stack>
+    )
 }
+
+export default TabsLayout
