@@ -1,3 +1,4 @@
+import ImageCarousel from "@/components/ImageCarousel";
 import { router } from "expo-router";
 import { View, Text, Button } from "react-native";
 

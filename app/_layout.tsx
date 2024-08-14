@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import 'react-native-reanimated';
 import { Stack } from 'expo-router';
 import Header from '@/components/Header';
+import HomeHeader from '@/components/HomeHeader';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -27,7 +28,7 @@ export default function RootLayout() {
   return (
      <Stack>
         <Stack.Screen name='(tabs)' options={{headerShown: false}} />
-        <Stack.Screen name='index' options={{headerShown: true, headerTitle: 'AVANA', header: () => <Header /> }}/>
+        <Stack.Screen name='index' options={{headerShown: true, headerTitle: 'AVANA', header: () => <HomeHeader /> }}/>
      </Stack>
   );
 }
