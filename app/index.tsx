@@ -1,13 +1,17 @@
 import ImageCarousel from "@/components/ImageCarousel";
-import { router } from "expo-router";
-import { View, Text, Button } from "react-native";
+import { View, SafeAreaView, ScrollView } from "react-native";
 
 function Main() {
 
     return (
-        <View className="flex justify-center items-center">
-           <Button title="Go to home" onPress={() => router.push('/home')}/>
-        </View>
+        <SafeAreaView >
+            <ScrollView className="h-full bg-[#fff]"> 
+               <View className="flex justify-center items-center bg-[#eef4ff3e] p-2 rounded-2xl mx-3">
+                <ImageCarousel />
+              </View>
+          </ScrollView>
+       </SafeAreaView>
+        
     )
 }
 
