@@ -1,8 +1,12 @@
-import { View, Text } from "react-native";
+import ImageCarousel from "@/components/ImageCarousel";
+import { SafeAreaView } from "react-native";
 
-function Home() {
-
-    return <View><Text>Hello</Text></View>
+function Main() {
+    return (
+        <SafeAreaView >
+            <ImageCarousel />
+       </SafeAreaView>
+    )
 }
 
-export default Home
+export default Main;

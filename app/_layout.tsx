@@ -1,10 +1,10 @@
 import { useFonts } from 'expo-font';
-import { StyleSheet } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import React, { useEffect } from 'react';
 import 'react-native-reanimated';
-import { Stack } from 'expo-router';
+import { Stack, Tabs } from 'expo-router';
 import HomeHeader from '@/components/HomeHeader';
+import { FontAwesome } from '@expo/vector-icons';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -25,17 +25,8 @@ export default function RootLayout() {
   }
 
   return (
-     <Stack>
-        <Stack.Screen name='index' options={{headerShown: true, header: () => <HomeHeader /> }}/>
-        <Stack.Screen name='(tabs)' options={{headerShown: false}} />
-     </Stack>
+       <Stack>
+         <Stack.Screen name='(tabs)' options={{headerShown: false}}/>
+       </Stack>
   );
 }
-
-
-const headerStyle = StyleSheet.create({
-  header: {
-    backgroundColor: 'red',
-    height: 100
-  }
-})

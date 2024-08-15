@@ -14,7 +14,7 @@ function ImageCarousel() {
     }
 
     return (
-        <SafeAreaView >
+        <SafeAreaView className="justify-center items-center my-2">
             <Carousel
               layout='default'
               data={[images.obiVatan, images.merciBaku, images.obiShirin]}
