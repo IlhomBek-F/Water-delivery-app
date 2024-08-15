@@ -26,8 +26,8 @@ export default function RootLayout() {
 
   return (
      <Stack>
+        <Stack.Screen name='index' options={{headerShown: true, header: () => <HomeHeader /> }}/>
         <Stack.Screen name='(tabs)' options={{headerShown: false}} />
-        <Stack.Screen name='index' options={{headerShown: true, headerTitle: 'AVANA', header: () => <HomeHeader /> }}/>
      </Stack>
   );
 }

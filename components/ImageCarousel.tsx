@@ -17,7 +17,7 @@ function ImageCarousel() {
         <SafeAreaView >
             <Carousel
               layout='default'
-              data={[images.obiZulol,images.obiVatan, images.merciBaku, images.obiShirin]}
+              data={[images.obiVatan, images.merciBaku, images.obiShirin]}
               sliderWidth={250}
               itemWidth={250}
               autoplayInterval={5000}
@@ -34,7 +34,7 @@ function ImageCarousel() {
 const SliderPagination = ({activeSlide}: {activeSlide: number}) => {
     return (
         <Pagination
-          dotsLength={4}
+          dotsLength={3}
           activeDotIndex={activeSlide}
           dotStyle={{
               width: 10,

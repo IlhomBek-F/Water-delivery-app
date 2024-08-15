@@ -1,17 +1,16 @@
 import React from "react";
-import { router, Stack } from "expo-router";
-import { Button, Pressable } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import WaterListHeader from "@/components/WaterListHeader";
+import { FontAwesome } from "@expo/vector-icons";
+import { Tabs } from "expo-router";
 
 function TabsLayout() {
+
     return (
-      <Stack>
-        <Stack.Screen name="home" options={{
-          header: () => <WaterListHeader />
-        }}/>
-        <Stack.Screen name="about" options={{headerLeft: () => <Button title="Home" onPress={() => router.dismiss(1)}/>}}/>
-      </Stack>
+        <Tabs>
+             <Tabs.Screen name="home" options={{
+                title: 'Home',
+                tabBarIcon: ({color}) => <FontAwesome size={28} name="home" color={color} /> 
+             }}/>
+        </Tabs>
     )
 }
 
