@@ -1,6 +1,6 @@
 import HomeHeader from "@/components/HomeHeader";
 import { Ionicons } from "@expo/vector-icons";
-import { Tabs } from "expo-router";
+import { Stack, Tabs } from "expo-router";
 import { View , Text} from "react-native";
 
 const TabBarIcon = ({color, focused, name, icon}) => {
@@ -13,7 +13,8 @@ const TabBarIcon = ({color, focused, name, icon}) => {
 function TabsLayout() {
 
     return (
-          <Tabs screenOptions={{
+      <>
+      <Tabs screenOptions={{
              tabBarShowLabel: false,
              tabBarActiveTintColor: 'blue', 
              tabBarLabelStyle: {
@@ -27,7 +28,7 @@ function TabsLayout() {
              },
              }}>
              <Tabs.Screen name="home" options={{
-                header: () => <HomeHeader />,
+                headerShown: false,
                 tabBarIcon: ({color, focused}) => <TabBarIcon color={color} focused={focused} icon='water-outline' name='Home'/>
                 }}/>
                  <Tabs.Screen name="orders" options={{
@@ -43,6 +44,8 @@ function TabsLayout() {
                 tabBarIcon: ({color, focused}) => <TabBarIcon color={color} focused={focused} icon='person-outline' name='Profile'/>
                 }}/>
           </Tabs>
+      </>
+          
     )
 }
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, SafeAreaView, Image } from "react-native";
 import images from "@/constants/images";
 import Carousel, {Pagination} from "react-native-snap-carousel";
+import HomeHeader from "./HomeHeader";
 function ImageCarousel() {
     const [activeSlide, setActiveSlide] = useState(0);
 
@@ -14,19 +15,22 @@ function ImageCarousel() {
     }
 
     return (
-        <SafeAreaView className="justify-center items-center my-2">
-            <Carousel
-              layout='default'
-              data={[images.obiVatan, images.merciBaku, images.obiShirin]}
-              sliderWidth={250}
-              itemWidth={250}
-              autoplayInterval={5000}
-              autoplay
-              loop={false}
-              onSnapToItem={(index) => setActiveSlide(index)}
-              renderItem={renderItem}
+        <SafeAreaView >
+            <HomeHeader />
+             <View className="justify-center items-center my-2">
+               <Carousel
+                       layout='default'
+                       data={[images.obiVatan, images.merciBaku, images.obiShirin]}
+                       sliderWidth={250}
+                       itemWidth={250}
+                       autoplayInterval={5000}
+                       autoplay
+                       loop={false}
+                       onSnapToItem={(index) => setActiveSlide(index)}
+                       renderItem={renderItem}
              />
-              {<SliderPagination activeSlide={activeSlide}/>}
+             {<SliderPagination activeSlide={activeSlide}/>}
+            </View>
       </SafeAreaView>
     )
 }

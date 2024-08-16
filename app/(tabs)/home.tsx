@@ -1,10 +1,14 @@
 import ImageCarousel from "@/components/ImageCarousel";
-import { SafeAreaView } from "react-native";
+import WaterLists from "@/components/WaterList";
+import { SafeAreaView, ScrollView } from "react-native";
 
 function Main() {
     return (
         <SafeAreaView >
-            <ImageCarousel />
+            <ScrollView>
+               <ImageCarousel />
+               <WaterLists />
+            </ScrollView>
        </SafeAreaView>
     )
 }
