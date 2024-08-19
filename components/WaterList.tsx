@@ -1,7 +1,6 @@
 import images from "@/constants/images";
 import { FlatList, SafeAreaView } from "react-native";
 import WaterCard from "./WaterCard";
-import { useNavigation } from "expo-router";
 
 function WaterLists() {
     return (
