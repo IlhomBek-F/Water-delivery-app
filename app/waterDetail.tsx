@@ -56,7 +56,7 @@ function WaterDetail() {
                     When clean drinking water is always at hand, you can be sure that one the 
                     components of a healthy lifestyle is completely safe and bring only use
                 </Text>
-                <TouchableOpacity onPress={() => router.replace('/(tabs)/cart')} className="bg-blue-500 h-[60px] rounded-[50%] flex-row justify-center items-center" activeOpacity={0.8}>
+                <TouchableOpacity onPress={() => router.push('/(tabs)/cart')} className="bg-blue-500 h-[60px] rounded-[50%] flex-row justify-center items-center" activeOpacity={0.8}>
                     <Text className="text-white font-semibold">Add to cart</Text>
                 </TouchableOpacity>
             </View>

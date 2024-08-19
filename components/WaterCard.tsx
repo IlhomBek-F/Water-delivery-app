@@ -1,4 +1,4 @@
-import { router, useNavigation } from "expo-router";
+import { useNavigation } from "expo-router";
 import { TouchableOpacity, Image, Text } from "react-native";
 
 function WaterCard({item, index}) {
