@@ -3,6 +3,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import React, { useEffect } from 'react';
 import 'react-native-reanimated';
 import { Stack } from 'expo-router';
+import { NavigationContainer } from '@react-navigation/native';
+import WaterListHeader from '@/components/WaterListHeader';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -23,9 +25,9 @@ export default function RootLayout() {
   }
 
   return (
-       <Stack>
+      <Stack>
          <Stack.Screen name='(tabs)' options={{headerShown: false}}/>
-         <Stack.Screen name='(tabs)/cart.tsx' options={{headerShown: false}}/>
+         <Stack.Screen name='waterDetail' options={{headerShown: false}} />
        </Stack>
   );
 }

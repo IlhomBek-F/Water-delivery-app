@@ -1,11 +1,15 @@
+import WaterListHeader from "@/components/WaterListHeader";
+import { useRoute } from "@react-navigation/native";
 import { View, Text, SafeAreaView } from "react-native";
 
 function WaterDetail() {
+    const {params} = useRoute();
 
     return (
-        <SafeAreaView className="bg-blue-300 rounded-b-[50%] h-[230px]">
+        <SafeAreaView >
             <View>
-               <Text>Hello world</Text>
+               <WaterListHeader />
+               <Text>Hello world {params.item}</Text>
            </View>
         </SafeAreaView>
     )

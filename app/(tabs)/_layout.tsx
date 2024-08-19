@@ -1,6 +1,5 @@
-import HomeHeader from "@/components/HomeHeader";
 import { Ionicons } from "@expo/vector-icons";
-import { Stack, Tabs } from "expo-router";
+import { Tabs } from "expo-router";
 import { View , Text} from "react-native";
 
 const TabBarIcon = ({color, focused, name, icon}) => {

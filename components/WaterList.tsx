@@ -1,9 +1,9 @@
 import images from "@/constants/images";
 import { FlatList, SafeAreaView } from "react-native";
 import WaterCard from "./WaterCard";
+import { useNavigation } from "expo-router";
 
 function WaterLists() {
-
     return (
         <SafeAreaView className="justify-center items-center">
             <FlatList data={[images.obiVatan1, images.obiVatan1, images.obiVatan1]} keyExtractor={({item, index}) => index} key={1}
