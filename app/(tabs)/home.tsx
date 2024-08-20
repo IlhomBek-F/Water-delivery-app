@@ -7,7 +7,9 @@ import { SafeAreaView, ScrollView } from "react-native";
 function Main() {
 
     useEffect(() => {
-        router.dismiss(3)
+        if(router.canDismiss()) {
+            router.dismiss(3)
+        }
     }, []);
 
     return (

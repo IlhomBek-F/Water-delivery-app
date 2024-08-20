@@ -1,3 +1,5 @@
+import CartHeader from "@/components/CartHeader";
+import HomeHeader from "@/components/HomeHeader";
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import { View , Text} from "react-native";
@@ -27,15 +29,15 @@ function TabsLayout() {
              },
              }}>
              <Tabs.Screen name="home" options={{
-                headerShown: false,
+                header: () => <HomeHeader />,
                 tabBarIcon: ({color, focused}) => <TabBarIcon color={color} focused={focused} icon='water-outline' name='Home'/>
                 }}/>
                  <Tabs.Screen name="orders" options={{
                 headerShown: false,
                 tabBarIcon: ({color, focused}) => <TabBarIcon color={color} focused={focused} icon='time-outline' name='Orders'/>
                 }}/>
-                 <Tabs.Screen name="cart" options={{
-                headerShown: false,
+               <Tabs.Screen name="cart" options={{
+                header: () => <CartHeader />,
                 tabBarIcon: ({color, focused}) => <TabBarIcon color={color} focused={focused} icon='bag-outline' name='Cart'/>
                 }}/>
                  <Tabs.Screen name="profile" options={{

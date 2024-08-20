@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, SafeAreaView, Image } from "react-native";
 import images from "@/constants/images";
 import Carousel, {Pagination} from "react-native-snap-carousel";
-import HomeHeader from "./HomeHeader";
+
 function ImageCarousel() {
     const [activeSlide, setActiveSlide] = useState(0);
 
@@ -16,7 +16,6 @@ function ImageCarousel() {
 
     return (
         <SafeAreaView >
-            <HomeHeader />
              <View className="justify-center items-center my-2">
                <Carousel
                        layout='default'

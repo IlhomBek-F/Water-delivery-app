@@ -32,7 +32,7 @@ function WaterDetail() {
     return (
         <SafeAreaView >
             <View className="bg-[#EBEFFF] h-[300px]">
-                <WaterDetailHeader />
+                <WaterDetailHeader title='Water'/>
                 <Animated.View style={{transform: [{scale: startValue}]}} className='justify-center items-center'>
                    <Image source={images.obiVatan2} resizeMode="contain" className="w-[200px] h-[101px]"/>
                 </Animated.View>
