@@ -5,10 +5,12 @@ import { Tabs } from "expo-router";
 import { View , Text} from "react-native";
 
 const TabBarIcon = ({color, focused, name, icon}) => {
-    return <View className={`w-[70px] rounded-md  h-[50px] justify-center items-center p-1 ${focused && 'bg-blue-100'}`}>
+    return <>
+    <View className={`w-[70px] rounded-md  h-[50px] justify-center items-center p-1 ${focused && 'bg-blue-100'}`}>
        <Ionicons name={icon} size={25} color={focused && '#4d94ff' || '#404040'} />
        <Text className={`text-gray-600 font-medium ${focused && 'text-blue-500'}`}>{name}</Text>
     </View>
+    </>
 }
 
 function TabsLayout() {

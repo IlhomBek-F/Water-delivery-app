@@ -1,8 +1,9 @@
+import AddSubButtons from "@/components/AddSubButtons";
+import ButtonElem from "@/components/ButtonElem";
 import images from "@/constants/images";
-import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
-import { useState } from "react";
-import { View, Text, SafeAreaView, Image, Pressable, TouchableOpacity, ScrollView } from "react-native";
+import React, { useState } from "react";
+import { View, Text, SafeAreaView, Image } from "react-native";
 
 function Cart() {
   const [count, setCount] = useState(3);
@@ -26,7 +27,7 @@ const subCount = () => {
                       <Text className="font-semibold mb-3">Water "Obi Vatan" 19L</Text>
                       <View className="flex-row justify-between w-[220px] items-center">
                          <Text className="font-semibold">57 TJS</Text>
-                         <AddSubComponent count={count} addCount={addCount} subCount={subCount} />
+                         <AddSubButtons count={count} addCount={addCount} subCount={subCount} />
                       </View>
                    </View>
               </View>
@@ -35,29 +36,11 @@ const subCount = () => {
                     <Text className="font-semibold">Total:</Text>
                     <Text className="font-semibold">57 TJS</Text>
                   </View>
-                  <TouchableOpacity onPress={() => router.push('/(tabs)/cart')} 
-                  className="bg-blue-500 w-[330px] h-[60px] rounded-[50%] flex-row justify-center items-center" 
-                  activeOpacity={0.8}>
-                    <Text className="text-white font-semibold">Buy now</Text>
-                </TouchableOpacity>
+                  <ButtonElem title='Buy now' handleEvent={() => router.push('/(tabs)/cart')}/>
               </View>
             </View>
         </SafeAreaView>
     )
-}
-
-function AddSubComponent({count, subCount, addCount}) {
-  return (
-                        <View className="flex-row justify-between w-[90px] border border-gray-400 rounded-2xl px-2 py-[8px]">
-                        <Pressable onPress={() => subCount()} className="w-[20px] justify-start flex-row">
-                            <Ionicons name="remove-outline"  className="font-extrabold text-blue-400" size={16}/>
-                        </Pressable>
-                        <Text>{count}</Text>
-                        <Pressable onPress={() => addCount()} className="w-[20px] justify-end flex-row">
-                            <Ionicons name="add-outline" className="font-extrabold text-blue-400" size={16}/>
-                        </Pressable>
-                        </View>
-  )
 }
 
 export default Cart;

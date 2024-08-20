@@ -1,4 +1,4 @@
-import { useNavigation } from "expo-router";
+import { router, useNavigation } from "expo-router";
 import { TouchableOpacity, Image, Text } from "react-native";
 
 function WaterCard({item, index}) {
@@ -7,7 +7,7 @@ function WaterCard({item, index}) {
 
     return (
         <TouchableOpacity className="w-[167px] bg-white items-center rounded-lg h-[200px]" activeOpacity={0.6} onPress={() => {
-            navigation.navigate('screens/waterDetail', {item})
+            router.push('screens/waterDetail')
         }}>
             <Image source={item} resizeMode="contain" className="w-[135px] h-[150px] mb-1" key={index}/>
             <Text className="font-semibold">Water "Obi Vatan" 19l</Text>

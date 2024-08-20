@@ -1,3 +1,5 @@
+import AddSubButtons from "@/components/AddSubButtons";
+import ButtonElem from "@/components/ButtonElem";
 import WaterDetailHeader from "@/components/WaterDetailHeader";
 import images from "@/constants/images";
 import { Ionicons } from "@expo/vector-icons";
@@ -32,7 +34,7 @@ function WaterDetail() {
     return (
         <SafeAreaView >
             <View className="bg-[#EBEFFF] h-[300px]">
-                <WaterDetailHeader title='Water'/>
+                <WaterDetailHeader />
                 <Animated.View style={{transform: [{scale: startValue}]}} className='justify-center items-center'>
                    <Image source={images.obiVatan2} resizeMode="contain" className="w-[200px] h-[101px]"/>
                 </Animated.View>
@@ -41,24 +43,14 @@ function WaterDetail() {
                 <Text className="font-semibold text-xl py-6">Water "Obi Vatan" 19 L</Text>
                 <View className="flex justify-between flex-row items-center mb-6">
                     <Text className="font-semibold">19 TJS</Text>
-                    <View className="flex-row justify-between items-center w-[90px] border border-gray-400 rounded-2xl px-2 py-[8px]">
-                        <Pressable onPress={() => subCount()} className="w-[20px] justify-start flex-row">
-                            <Ionicons name="remove-outline"  className="font-extrabold text-blue-400" size={16}/>
-                        </Pressable>
-                        <Text>{count}</Text>
-                        <Pressable onPress={() => addCount()} className="w-[20px] justify-end flex-row">
-                            <Ionicons name="add-outline" className="font-extrabold text-blue-400" size={16}/>
-                        </Pressable>
-                    </View>
+                    <AddSubButtons count={count} subCount={subCount} addCount={addCount}/>
                 </View>
                 <Text className="font-semibold text-wrap mb-10">
                     Obi Vatan bottled drinking water is a daily contribution to your health. 
                     When clean drinking water is always at hand, you can be sure that one the 
                     components of a healthy lifestyle is completely safe and bring only use
                 </Text>
-                <TouchableOpacity onPress={() => router.push('/(tabs)/cart')} className="bg-blue-500 h-[60px] rounded-[50%] flex-row justify-center items-center" activeOpacity={0.8}>
-                    <Text className="text-white font-semibold">Add to cart</Text>
-                </TouchableOpacity>
+                <ButtonElem title='Add to cart' handleEvent={() => router.push('/(tabs)/cart')}/>
             </View>
         </SafeAreaView>
     )
