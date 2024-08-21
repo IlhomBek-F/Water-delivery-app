@@ -36,7 +36,7 @@ const subCount = () => {
                     <Text className="font-semibold">Total:</Text>
                     <Text className="font-semibold">57 TJS</Text>
                   </View>
-                  <ButtonElem title='Buy now' handleEvent={() => router.push('/(tabs)/cart')}/>
+                  <ButtonElem title='Buy now' handleEvent={() => router.push('/screens/deliveryAddress')}/>
               </View>
             </View>
         </SafeAreaView>
