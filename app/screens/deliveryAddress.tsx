@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { View, Text, SafeAreaView, TextInput } from "react-native";
 import { DatePickerInput, registerTranslation, TimePickerModal } from "react-native-paper-dates";
 
-registerTranslation('pl', {
+registerTranslation('en', {
     selectSingle: 'Select Date',
     selectMultiple: 'Select Dates',
     selectRange: 'Select period',
